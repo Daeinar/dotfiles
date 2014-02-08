@@ -94,14 +94,14 @@ vnoremap > >gv
 " use kj as <Esc> alternative
 inoremap kj <Esc>
 
-" make Python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
+" make Python follow PEP8 (http://www.python.org/dev/peps/pep-0008/)
 au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
 
 " treat sage and cython like python
 autocmd BufRead,BufNewFile *.sage,*.pyx,*.spyx set filetype=python
 " autocmd FileType python set makeprg=sage\ -b\ &&\ sage\ -t\ %
 
-" tex
+" LaTeX
 autocmd FileType tex set makeprg=pdflatex\ %
 let g:tex_flavor='latex'
 
