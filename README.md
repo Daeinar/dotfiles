@@ -3,6 +3,10 @@
 
 #### setup notes
 
+##### zsh
+    ln -s /path/to/dotfiles/.zshrc ~/.zshrc
+    ln -s /path/to/dotfiles/.zsh ~/.zsh
+
 ##### vim
     ln -s /path/to/dotfiles/.vimrc ~/.vimrc
     ln -s /path/to/dotfiles/.vim ~/.vim
