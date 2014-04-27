@@ -12,5 +12,10 @@ setopt long_list_jobs
 export PAGER="less"
 
 # autojump configurations
-[[ -f `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
+if [ `uname` = "Darwin" ];
+then
+  [[ -f `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
+fi
+
+
 
