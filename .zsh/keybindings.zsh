@@ -2,7 +2,10 @@ bindkey -e                                              # Use emacs keybindings
 bindkey '\ew' kill-region                               # [Esc-w] - Kill from the cursor to the mark
 bindkey -s '\el' "ls\n"                                 # [Esc-l] - run command: ls
 bindkey -s '\e.' "..\n"                                 # [Esc-.] - run command: cd ..
-bindkey '^r' history-incremental-search-backward        # [Ctrl-r] - Search backward incrementally for a specified string. The string may begin with ^ to anchor the search to the beginning of the line.
+bindkey '^R' history-incremental-search-backward        # [Ctrl-r] - Search backward incrementally for a specified string.
+bindkey '^S' history-incremental-search-forward         # [Ctrl-s] - Search forward incrementally for a specified string.
+bindkey '^P' history-search-backward                    # [Ctrl-p] - Previous command.
+bindkey '^N' history-search-forward                     # [Ctrl-n] - Next command.
 bindkey "^[[5~" up-line-or-history                      # [Fn-UpArrow = Page Up]
 bindkey "^[[6~" down-line-or-history                    # [Fn-DownArrow = Page Down]
 
