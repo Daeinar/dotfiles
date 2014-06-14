@@ -13,6 +13,7 @@ filetype plugin indent on
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'Townk/vim-autoclose'
 Bundle 'Lokaltog/vim-powerline'
+"Bundle 'fatih/vim-go'
 
 " vim-powerline
 let g:Powerline_symbols = 'fancy'
@@ -26,9 +27,9 @@ set ruler
 " whitespace
 set nowrap
 set expandtab
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -72,10 +73,11 @@ cnoremap <C-n> <Down>
 let mapleader = ","
 nmap <silent> <leader>s :set spell!<CR>
 set spelllang=en_gb
+set spellfile=$HOME/.vim/spell/en.utf-8.add
 
 " directories for swp files
-set backupdir=~/.vim/backup
-set directory=~/.vim/backup
+set backupdir=$HOME/.vim/backup
+set directory=$HOME/.vim/backup
 
 " key mappings (move through splitted windows)
 " nnoremap <C-h> <C-w>h
@@ -93,9 +95,6 @@ vnoremap > >gv
 
 " use kj as <Esc> alternative
 inoremap kj <Esc>
-
-" make Python follow PEP8 (http://www.python.org/dev/peps/pep-0008/)
-au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
 
 " treat sage and cython like python
 autocmd BufRead,BufNewFile *.sage,*.pyx,*.spyx set filetype=python
@@ -116,6 +115,17 @@ fun! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfun
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+
+" change textwidth between 0 and 80 chars
+nmap <silent> <leader>tw :call ToggleTextWidth()<CR>
+function ToggleTextWidth()
+    if &l:textwidth ==# 0
+        let &l:textwidth=80
+    else
+        let &l:textwidth=0
+    endif
+    echom "textwidth:" &l:textwidth
+endfunction
 
 " OS X
 if has("unix")
