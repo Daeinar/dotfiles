@@ -13,11 +13,18 @@ filetype plugin indent on
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'Townk/vim-autoclose'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'SirVer/ultisnips'
 "Bundle 'fatih/vim-go'
 
 " vim-powerline
 let g:Powerline_symbols = 'fancy'
 set laststatus=2
+
+" ultisnips config
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsEditSplit="vertical"
 
 " textwidth
 set textwidth=0
