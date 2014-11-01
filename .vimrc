@@ -18,7 +18,11 @@ Bundle 'Lokaltog/vim-powerline'
 " vim-powerline
 let g:Powerline_symbols = 'fancy'
 set laststatus=2
+
+" textwidth
 set textwidth=0
+au Filetype text set textwidth=80
+au Filetype tex set textwidth=80
 
 " add line numbers
 set number
