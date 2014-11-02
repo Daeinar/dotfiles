@@ -1,20 +1,23 @@
 set nocompatible
 set encoding=utf-8
 
-" vundle configs
+" set basic Vundle configs
 filetype off
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
+call vundle#begin()
+Plugin 'gmarik/vundle'
 
+" load Vundle plugins
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'Townk/vim-autoclose'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+"TODO: Plugin 'tpope/vim-fugitive'
+
+" finalise Vundle config
+call vundle#end()
 filetype plugin indent on
-
-" vundle bundles
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'Townk/vim-autoclose'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'SirVer/ultisnips'
-"Bundle 'fatih/vim-go'
 
 " vim-powerline
 let g:Powerline_symbols = 'fancy'
@@ -22,9 +25,10 @@ set laststatus=2
 
 " ultisnips config
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsSnippetDirectories=["customsnips","bundle/vim-snippets/UltiSnips"]
 
 " textwidth
 set textwidth=0
@@ -80,7 +84,7 @@ set history=200
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 
-" spell checking: toggle sc on and off with `,s`
+" spell checking: toggle on/off with `,s`
 let mapleader = ","
 nmap <silent> <leader>s :set spell!<CR>
 set spelllang=en_gb
@@ -91,10 +95,10 @@ set backupdir=$HOME/.vim/backup
 set directory=$HOME/.vim/backup
 
 " key mappings (move through splitted windows)
-" nnoremap <C-h> <C-w>h
-" nnoremap <C-j> <C-w>j
-" nnoremap <C-k> <C-w>k
-" nnoremap <C-l> <C-w>l
+ nnoremap <C-h> <C-w>h
+ nnoremap <C-j> <C-w>j
+ nnoremap <C-k> <C-w>k
+ nnoremap <C-l> <C-w>l
 
 " easier increment / decrement
 nnoremap + <C-a>
@@ -127,7 +131,7 @@ fun! <SID>StripTrailingWhitespaces()
 endfun
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
-" change textwidth between 0 and 80 chars
+" change textwidth between 0 and 80 chars, with `,tw`
 nmap <silent> <leader>tw :call ToggleTextWidth()<CR>
 function ToggleTextWidth()
     if &l:textwidth ==# 0
