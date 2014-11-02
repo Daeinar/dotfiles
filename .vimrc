@@ -13,7 +13,6 @@ Plugin 'Townk/vim-autoclose'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-"TODO: Plugin 'tpope/vim-fugitive'
 
 " finalise Vundle config
 call vundle#end()
@@ -28,7 +27,7 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsEditSplit="vertical"
-let g:UltiSnipsSnippetDirectories=["customsnips","bundle/vim-snippets/UltiSnips"]
+let g:UltiSnipsSnippetDirectories=["customsnips"]
 
 " textwidth
 set textwidth=0
