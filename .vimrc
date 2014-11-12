@@ -88,6 +88,7 @@ let mapleader = ","
 nmap <silent> <leader>s :set spell!<CR>
 set spelllang=en_gb
 set spellfile=$HOME/.vim/spell/en.utf-8.add
+autocmd BufRead,BufNewFile *.{md,tex} setlocal spell
 
 " directories for swp files
 set backupdir=$HOME/.vim/backup
