@@ -1,17 +1,23 @@
 extends tex
 
-snippet Figure "References to figure" w
+snippet Figure "references to figure" w
 Figure~\ref{fig:${1:something}}$0
 endsnippet
 
-snippet Table "Reference to table" w
+snippet Table "reference to table" w
 Table~\ref{tab:${1:something}}$0
 endsnippet
 
-snippet sum "Summation" w
+snippet sum "summation" w
 \sum_{${1:from}}^{${2:to}}$0
 endsnippet
 
-snippet cite "Citation" w
+snippet cite "citation" w
 \cite{${1:source}}$0
 endsnippet
+
+snippet graphics "include graphics" w
+\includegraphics[width=${1:factor}\textwidth]{${2:source}}$0
+endsnippet
+
+
