@@ -12,6 +12,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'Townk/vim-autoclose'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'SirVer/ultisnips'
+Plugin 'rust-lang/rust.vim'
 "Plugin 'honza/vim-snippets'
 
 " finalise Vundle config
