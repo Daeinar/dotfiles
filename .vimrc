@@ -119,6 +119,7 @@ autocmd BufRead,BufNewFile *.sage,*.pyx,*.spyx set filetype=python
 " LaTeX
 autocmd FileType tex set makeprg=pdflatex\ %
 let g:tex_flavor='latex'
+autocmd BufRead,BufNewFile *.cls set filetype=tex
 
 " gqip formats a paragraph using par (80 columns)
 set formatprg=par\ -w80
