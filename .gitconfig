@@ -5,3 +5,10 @@
 	user = Daeinar
 [core]
 	editor = vim
+[alias]
+    # the acronym stands for "subtree add"
+    sba = "!f() { git subtree add --prefix $2 $1 master; }; f"
+    # the acronym stands for "subtree update"
+    sbu = "!f() { git subtree pull --prefix $2 $1 master; }; f"
+    # the acronym stands for "subtree push"
+    sbp = "!f() { git subtree push --prefix $2 $1 master; }; f"
