@@ -1,10 +1,10 @@
 [user]
-	email = philipp@jovanovic.io
-	name = Philipp Jovanovic
+    email = philipp@jovanovic.io
+    name = Philipp Jovanovic
 [github]
-	user = Daeinar
+    user = Daeinar
 [core]
-	editor = vim
+    editor = vim
 [alias]
     # the acronym stands for "subtree add"
     sba = "!f() { git subtree add --prefix $2 $1 master; }; f"
