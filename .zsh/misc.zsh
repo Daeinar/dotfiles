@@ -11,11 +11,14 @@ setopt long_list_jobs
 # pager
 export PAGER="less"
 
-# autojump configurations
+# autojump
 if [ `uname` = "Darwin" ];
 then
   [[ -f `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 fi
 
-
+# virtualenv
+export WORKON_HOME=~/.virtualenvs # virtualenvwrapper
+source /usr/local/bin/virtualenvwrapper.sh
+#source /usr/local/opt/autoenv/activate.sh # autoenv
 

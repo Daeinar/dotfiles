@@ -11,9 +11,12 @@ Plugin 'gmarik/vundle'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'Townk/vim-autoclose'
 Plugin 'Lokaltog/vim-powerline'
-Plugin 'SirVer/ultisnips'
+"Plugin 'SirVer/ultisnips'
 Plugin 'rust-lang/rust.vim'
 "Plugin 'honza/vim-snippets'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+
 
 " finalise Vundle config
 call vundle#end()
@@ -32,8 +35,7 @@ let g:UltiSnipsSnippetDirectories=["customsnips"]
 
 " textwidth
 set textwidth=0
-au Filetype text set textwidth=80
-au Filetype tex set textwidth=80
+au Filetype text,tex,md,markdown set textwidth=80
 
 " add line numbers
 set number
@@ -67,8 +69,8 @@ syntax sync minlines=200
 
 " colors
 set background=dark
-colorscheme solarized
 set t_Co=256
+colorscheme solarized
 
 " scrolling behaviour
 set scrolloff=5
@@ -121,6 +123,10 @@ autocmd FileType tex set makeprg=pdflatex\ %
 let g:tex_flavor='latex'
 autocmd BufRead,BufNewFile *.cls set filetype=tex
 
+" Markdown
+let g:vim_markdown_math=1 " LaTeX syntax highlighting support
+highlight link mkdmath String
+
 " gqip formats a paragraph using par (80 columns)
 set formatprg=par\ -w80
 
@@ -134,15 +140,17 @@ endfun
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 " change textwidth between 0 and 80 chars, with `,tw`
-nmap <silent> <leader>tw :call ToggleTextWidth()<CR>
-function ToggleTextWidth()
-    if &l:textwidth ==# 0
-        let &l:textwidth=80
-    else
-        let &l:textwidth=0
-    endif
-    echom "textwidth:" &l:textwidth
-endfunction
+if !exists("*ToggleTextWidth")
+    function ToggleTextWidth()
+        if &l:textwidth ==# 0
+            let &l:textwidth=80
+        else
+            let &l:textwidth=0
+        endif
+        echom "textwidth:" &l:textwidth
+    endfunction
+    nmap <silent> <leader>tw :call ToggleTextWidth()<CR>
+endif
 
 " OS X
 if has("unix")
@@ -156,3 +164,9 @@ if has("unix")
     noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
   endif
 endif
+
+" get info about highlighting group of element under cursor
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
