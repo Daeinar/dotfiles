@@ -18,3 +18,6 @@
 ##### tmux (OS X)
     ln -s /path/to/dotfiles/.tmux-osx.conf ~/.tmux.conf
     ln -s /path/to/dotfiles/.tmux.conf ~/.tmux-default.conf
+
+#### git
+    ln -s /path/to/dotfiles/.gitconfig ~/.gitconfig
