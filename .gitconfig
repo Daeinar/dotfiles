@@ -7,8 +7,8 @@
     editor = vim
 [alias]
     # the acronym stands for "subtree add"
-    sba = "!f() { git subtree add --prefix $2 $1 master; }; f"
+    sba = "!f() { git subtree add --prefix=$1 $2 master; }; f"
     # the acronym stands for "subtree update"
-    sbu = "!f() { git subtree pull --prefix $2 $1 master; }; f"
+    sbu = "!f() { git subtree pull --prefix=$1 $2 master; }; f"
     # the acronym stands for "subtree push"
-    sbp = "!f() { git subtree push --prefix $2 $1 master; }; f"
+    sbp = "!f() { git subtree push --prefix=$1 $2 master; }; f"
