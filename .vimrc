@@ -1,38 +1,35 @@
 set nocompatible
 set encoding=utf-8
+let mapleader = ","
 
-" set basic Vundle configs
+" ========== vundle ==========
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#begin()
 Plugin 'gmarik/vundle'
-
-" load Vundle plugins
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'Townk/vim-autoclose'
 Plugin 'Lokaltog/vim-powerline'
-"Plugin 'SirVer/ultisnips'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'benmills/vimux'
 Plugin 'rust-lang/rust.vim'
-"Plugin 'honza/vim-snippets'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
-
-
-" finalise Vundle config
 call vundle#end()
 filetype plugin indent on
 
+" ========== vundle plugins ==========
 " vim-powerline
 let g:Powerline_symbols = 'fancy'
 set laststatus=2
 
-" ultisnips config
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-let g:UltiSnipsEditSplit="vertical"
-let g:UltiSnipsSnippetDirectories=["customsnips"]
+" vimux
+nmap <silent> <leader>rc :call VimuxPromptCommand() <CR>
+nmap <silent> <leader>rl :call VimuxRunLastCommand() <CR>
+nmap <silent> <leader>ri :call VimuxInspectRunner() <CR>
+nmap <silent> <leader>rs :call VimuxInterruptRunner() <CR>
 
+" ========== misc ==========
 " textwidth
 set textwidth=0
 au Filetype text,tex,md,markdown set textwidth=80
@@ -87,7 +84,6 @@ cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 
 " spell checking: toggle on/off with `,s`
-let mapleader = ","
 nmap <silent> <leader>s :set spell!<CR>
 set spelllang=en_gb
 set spellfile=$HOME/.vim/spell/en.utf-8.add
@@ -98,10 +94,10 @@ set backupdir=$HOME/.vim/backup
 set directory=$HOME/.vim/backup
 
 " key mappings (move through splitted windows)
- nnoremap <C-h> <C-w>h
- nnoremap <C-j> <C-w>j
- nnoremap <C-k> <C-w>k
- nnoremap <C-l> <C-w>l
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 " easier increment / decrement
 nnoremap + <C-a>
