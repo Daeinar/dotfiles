@@ -24,10 +24,10 @@ let g:Powerline_symbols = 'fancy'
 set laststatus=2
 
 " vimux
-nmap <silent> <leader>rc :call VimuxPromptCommand() <CR>
-nmap <silent> <leader>rl :call VimuxRunLastCommand() <CR>
-nmap <silent> <leader>ri :call VimuxInspectRunner() <CR>
-nmap <silent> <leader>rs :call VimuxInterruptRunner() <CR>
+nmap <silent> <leader>ve :call VimuxPromptCommand() <CR>
+nmap <silent> <leader>vr :call VimuxRunLastCommand() <CR>
+nmap <silent> <leader>vi :call VimuxInspectRunner() <CR>
+nmap <silent> <leader>vc :call VimuxInterruptRunner() <CR>
 
 " ========== misc ==========
 " textwidth
