@@ -15,6 +15,7 @@ Plugin 'benmills/vimux'
 Plugin 'rust-lang/rust.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'fatih/vim-go'
 call vundle#end()
 filetype plugin indent on
 
@@ -85,7 +86,7 @@ cnoremap <C-n> <Down>
 
 " spell checking: toggle on/off with `,s`
 nmap <silent> <leader>s :set spell!<CR>
-set spelllang=en_gb
+set spelllang=en_us
 set spellfile=$HOME/.vim/spell/en.utf-8.add
 autocmd BufRead,BufNewFile *.{md,tex} setlocal spell
 
@@ -137,7 +138,7 @@ fun! <SID>StripTrailingWhitespaces()
     %s/\s\+$//e
     call cursor(l, c)
 endfun
-autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+" autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 " change textwidth between 0 and 80 chars, with `,tw`
 if !exists("*ToggleTextWidth")
