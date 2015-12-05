@@ -125,7 +125,7 @@ let g:vim_markdown_math=1 " LaTeX syntax highlighting support
 highlight link mkdmath String
 
 " Golang
-set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
+"set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
 "autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow " execute golint (i.e. :Lint) on :w
 
 " gqip formats a paragraph using par (80 columns)
