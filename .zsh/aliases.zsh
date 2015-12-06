@@ -12,3 +12,5 @@ then
   source $HOME/.aliases-ssh
 fi
 
+# alias 'hub' with 'git'
+eval "$(hub alias -s)"
