@@ -9,7 +9,7 @@ call vundle#begin()
 Plugin 'gmarik/vundle'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'Townk/vim-autoclose'
-Plugin 'Lokaltog/vim-powerline'
+Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'benmills/vimux'
 Plugin 'rust-lang/rust.vim'
