@@ -19,16 +19,28 @@ Plugin 'fatih/vim-go'
 call vundle#end()
 filetype plugin indent on
 
-" ========== vundle plugins ==========
+" ========== plugins ==========
+ 
 " vim-powerline
 let g:Powerline_symbols = 'fancy'
 set laststatus=2
 
 " vimux
-nmap <silent> <leader>ve :call VimuxPromptCommand() <CR>
+nmap <silent> <leader>vp :call VimuxPromptCommand() <CR>
 nmap <silent> <leader>vr :call VimuxRunLastCommand() <CR>
 nmap <silent> <leader>vi :call VimuxInspectRunner() <CR>
 nmap <silent> <leader>vc :call VimuxInterruptRunner() <CR>
+
+" vim-go
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
+ 
+au FileType go nmap <leader>ds <plug>(go-def-split)
+au FileType go nmap <leader>dv <plug>(go-def-vertical)
+au FileType go nmap <leader>dt <plug>(go-def-tab)
+
 
 " ========== misc ==========
 " textwidth
@@ -94,7 +106,11 @@ autocmd BufRead,BufNewFile *.{md,tex} setlocal spell
 set backupdir=$HOME/.vim/backup
 set directory=$HOME/.vim/backup
 
-" key mappings (move through splitted windows)
+" more natural splitting
+set splitbelow
+set splitright
+ 
+" simpler navigation through splits
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
