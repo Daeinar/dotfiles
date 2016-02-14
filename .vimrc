@@ -11,11 +11,11 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'Townk/vim-autoclose'
 Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'benmills/vimux'
 Plugin 'rust-lang/rust.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'fatih/vim-go'
+Plugin 'tpope/vim-dispatch'
 call vundle#end()
 filetype plugin indent on
 
@@ -24,12 +24,6 @@ filetype plugin indent on
 " vim-powerline
 let g:Powerline_symbols = 'fancy'
 set laststatus=2
-
-" vimux
-nmap <silent> <leader>vp :call VimuxPromptCommand() <CR>
-nmap <silent> <leader>vr :call VimuxRunLastCommand() <CR>
-nmap <silent> <leader>vi :call VimuxInspectRunner() <CR>
-nmap <silent> <leader>vc :call VimuxInterruptRunner() <CR>
 
 " vim-go
 au FileType go nmap <leader>r <Plug>(go-run)
@@ -41,6 +35,13 @@ au FileType go nmap <leader>ds <plug>(go-def-split)
 au FileType go nmap <leader>dv <plug>(go-def-vertical)
 au FileType go nmap <leader>dt <plug>(go-def-tab)
 
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+let g:go_dispatch_enabled = 1
+let g:go_fmt_command = "goimports"
 
 " ========== misc ==========
 " textwidth
