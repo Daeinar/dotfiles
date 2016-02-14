@@ -6,7 +6,7 @@ let mapleader = ","
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#begin()
-Plugin 'gmarik/vundle'
+Plugin 'VundleVim/vundle'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'Townk/vim-autoclose'
 Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}

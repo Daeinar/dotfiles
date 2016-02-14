@@ -1,2 +1,3 @@
 .vim/backup/*.swp
 .vim/bundle/*
+!.vim/bundle/Vundle.vim
