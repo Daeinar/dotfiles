@@ -12,3 +12,5 @@
     sbu = "!f() { git subtree pull --prefix=$1 $2 master; }; f"
     # the acronym stands for "subtree push"
     sbp = "!f() { git subtree push --prefix=$1 $2 master; }; f"
+[push]
+	default = simple
