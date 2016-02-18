@@ -4,13 +4,13 @@ let mapleader = ","
 
 " ========== vundle ==========
 filetype off
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
-Plugin 'VundleVim/vundle'
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'Townk/vim-autoclose'
 Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'rust-lang/rust.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
