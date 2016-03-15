@@ -10,12 +10,14 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'Townk/vim-autoclose'
 Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
-"Plugin 'Valloric/YouCompleteMe'
-Plugin 'rust-lang/rust.vim'
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
+Plugin 'The-NERD-Commenter'
+Plugin 'The-NERD-Tree'
 Plugin 'fatih/vim-go'
-Plugin 'tpope/vim-dispatch'
+"Plugin 'Valloric/YouCompleteMe'
+"Plugin 'rust-lang/rust.vim'
+"Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+"Plugin 'tpope/vim-dispatch'
 call vundle#end()
 filetype plugin indent on
 
@@ -29,7 +31,7 @@ set laststatus=2
 au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>t <Plug>(go-test)
-au FileType go nmap <leader>c <Plug>(go-coverage)
+"au FileType go nmap <leader>c <Plug>(go-coverage)
  
 au FileType go nmap <leader>ds <plug>(go-def-split)
 au FileType go nmap <leader>dv <plug>(go-def-vertical)
@@ -42,6 +44,9 @@ let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 let g:go_dispatch_enabled = 1
 let g:go_fmt_command = "goimports"
+
+" NERD-Tree
+map <C-n> :NERDTreeToggle<CR>
 
 " ========== misc ==========
 " textwidth
