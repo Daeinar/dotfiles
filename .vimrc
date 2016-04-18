@@ -14,7 +14,7 @@ Plugin 'The-NERD-Commenter'
 Plugin 'The-NERD-Tree'
 Plugin 'fatih/vim-go'
 "Plugin 'Valloric/YouCompleteMe'
-"Plugin 'rust-lang/rust.vim'
+Plugin 'rust-lang/rust.vim'
 "Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 "Plugin 'tpope/vim-dispatch'
@@ -149,6 +149,9 @@ highlight link mkdmath String
 " Golang
 "set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
 "autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow " execute golint (i.e. :Lint) on :w
+
+" Rust
+" klet g:rustfmt_autosave = 1
 
 " gqip formats a paragraph using par (80 columns)
 set formatprg=par\ -w80
