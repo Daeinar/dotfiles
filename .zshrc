@@ -5,6 +5,7 @@ export LC_CTYPE=$LANG
 export GOPATH=~/Projects/go
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH:$GOPATH/bin
 export ZSH=~/.zsh
+export HOMEBREW_NO_ANALYTICS=1
 
 for config_file ($ZSH/*.zsh) source $config_file
 
