@@ -46,7 +46,7 @@ let g:go_dispatch_enabled = 1
 let g:go_fmt_command = "goimports"
 
 " NERD-Tree
-map <C-n> :NERDTreeToggle<CR>
+map <C-b> :NERDTreeToggle<CR>
 
 " ========== misc ==========
 " textwidth
@@ -125,6 +125,10 @@ nnoremap <C-l> <C-w>l
 " easier increment / decrement
 nnoremap + <C-a>
 nnoremap - <C-x>
+
+" toggle through buffers
+nnoremap <C-n> :bnext<CR>
+nnoremap <C-p> :bprevious<CR>
 
 " reselect visual block after indent / outdent
 vnoremap < <gv
