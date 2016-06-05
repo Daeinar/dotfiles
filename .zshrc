@@ -6,6 +6,7 @@ export GOPATH=~/Projects/go
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH:$GOPATH/bin
 export ZSH=~/.zsh
 export HOMEBREW_NO_ANALYTICS=1
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 for config_file ($ZSH/*.zsh) source $config_file
 
