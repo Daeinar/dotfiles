@@ -1,6 +1,7 @@
 [user]
     email = philipp@jovanovic.io
     name = Philipp Jovanovic
+	signingkey = C2B01B7E
 [github]
     user = Daeinar
 [core]
@@ -14,3 +15,5 @@
     sbp = "!f() { git subtree push --prefix=$1 $2 master; }; f"
 [push]
 	default = simple
+[commit]
+    gpgsign=true

@@ -130,6 +130,9 @@ nnoremap - <C-x>
 nnoremap <C-n> :bnext<CR>
 nnoremap <C-p> :bprevious<CR>
 
+" move to next buffer and close last one
+nnoremap <C-c> :bp\|bd #<CR>
+
 " reselect visual block after indent / outdent
 vnoremap < <gv
 vnoremap > >gv
