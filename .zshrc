@@ -8,6 +8,10 @@ export ZSH=~/.zsh
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
+# Rustup setup
+export PATH="$HOME/.cargo/bin:$PATH"
+fpath+=~/.zfunc # auto completion
+
 for config_file ($ZSH/*.zsh) source $config_file
 
 autoload -U compinit
