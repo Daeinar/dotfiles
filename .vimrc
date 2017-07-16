@@ -18,6 +18,7 @@ Plugin 'rust-lang/rust.vim'
 "Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 "Plugin 'tpope/vim-dispatch'
+Plugin 'kien/ctrlp.vim'
 call vundle#end()
 filetype plugin indent on
 
