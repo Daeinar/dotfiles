@@ -17,3 +17,5 @@
 	default = simple
 [commit]
     gpgsign=yes
+[gpg]
+	program = gpg2
