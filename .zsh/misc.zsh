@@ -14,11 +14,13 @@ export PAGER="less"
 # autojump
 if [ `uname` = "Darwin" ];
 then
-  [[ -f `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
+    [[ -f `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 fi
 
 # virtualenv
-export WORKON_HOME=~/.virtualenvs # virtualenvwrapper
-source /usr/local/bin/virtualenvwrapper.sh
-#source /usr/local/opt/autoenv/activate.sh # autoenv
-
+if [ -e "/usr/local/bin/virtualenvwrapper.sh" ]
+then
+    export WORKON_HOME=~/.virtualenvs # virtualenvwrapper
+    source /usr/local/bin/virtualenvwrapper.sh
+    #source /usr/local/opt/autoenv/activate.sh # autoenv
+fi

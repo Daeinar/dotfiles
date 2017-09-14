@@ -1,4 +1,4 @@
-# MacOS specific configurations
+# MacOS-specific configurations
  
 # Homebrew
 export HOMEBREW_NO_ANALYTICS=1

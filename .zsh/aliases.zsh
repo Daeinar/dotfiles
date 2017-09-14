@@ -5,7 +5,6 @@ alias tmux='tmux -u'
 alias brewer='brew update && brew upgrade && brew cleanup && brew doctor'
 alias getip='curl -s http://icanhazip.com'
 alias grep='grep --color=auto'
-alias sage='/Applications/sage/sage'
 
 if [ -e "$HOME/.aliases-ssh" ]
 then
@@ -13,4 +12,6 @@ then
 fi
 
 # alias 'hub' with 'git'
-eval "$(hub alias -s)"
+if type hub > /dev/null; then
+    eval "$(hub alias -s)"
+fi
