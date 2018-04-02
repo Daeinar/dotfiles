@@ -18,7 +18,7 @@ Plugin 'rust-lang/rust.vim'
 "Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 "Plugin 'tpope/vim-dispatch'
-Plugin 'kien/ctrlp.vim'
+"Plugin 'kien/ctrlp.vim'
 call vundle#end()
 filetype plugin indent on
 
@@ -148,7 +148,7 @@ autocmd BufRead,BufNewFile *.sage,*.pyx,*.spyx set filetype=python
 " LaTeX
 autocmd FileType tex set makeprg=pdflatex\ %
 let g:tex_flavor='latex'
-autocmd BufRead,BufNewFile *.cls set filetype=tex
+autocmd BufRead,BufNewFile *.tikz,*.cls set filetype=tex
 
 " Markdown
 let g:vim_markdown_math=1 " LaTeX syntax highlighting support
