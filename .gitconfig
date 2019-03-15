@@ -1,7 +1,7 @@
 [user]
     email = philipp@jovanovic.io
     name = Philipp Jovanovic
-	signingkey = C2B01B7E
+    signingkey = C2B01B7E
 [github]
     user = Daeinar
 [core]
@@ -14,13 +14,13 @@
     # the acronym stands for "subtree push"
     sbp = "!f() { git subtree push --prefix=$1 $2 master; }; f"
 [push]
-	default = simple
+    default = simple
 [commit]
     gpgsign=yes
 [gpg]
-	program = gpg2
+    program = gpg2
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
