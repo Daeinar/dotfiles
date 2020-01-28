@@ -9,6 +9,7 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 # Python
 #export PATH=/Users/cosh/Library/Python/3.6/bin:$PATH
+#export PATH=/usr/local/Cellar/python/3.7.6_1/bin:$PATH
 
 # LLVM (from Homebrew)
 export PATH=/usr/local/opt/llvm/bin:$PATH

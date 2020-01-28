@@ -61,9 +61,9 @@ set ruler
 " whitespace
 set nowrap
 set expandtab
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -163,6 +163,9 @@ highlight link mkdmath String
 
 " gqip formats a paragraph using par (80 columns)
 set formatprg=par\ -w80
+
+" refresh open files automatically
+set autoread
 
 " strip trailing whitespaces on each save
 fun! <SID>StripTrailingWhitespaces()
