@@ -15,7 +15,7 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=/usr/local/opt/llvm/bin:$PATH
 
 # Golang
-export GOPATH=/Volumes/Data/code/go
+export GOPATH=$HOME/Data/code/go
 export PATH=$PATH:$GOPATH/bin
 
 # Rustup
