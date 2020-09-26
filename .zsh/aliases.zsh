@@ -6,10 +6,10 @@ alias brewer='brew update && brew upgrade && brew cleanup && brew doctor'
 alias getip='curl -s http://icanhazip.com'
 alias grep='grep --color=auto'
 
-if [ -e "$HOME/.aliases-ssh" ]
-then
-  source $HOME/.aliases-ssh
-fi
+# if [ -e "$HOME/.aliases-ssh" ]
+# then
+#   source $HOME/.aliases-ssh
+# fi
 
 # alias 'hub' with 'git'
 if type hub > /dev/null; then

@@ -6,17 +6,17 @@ let mapleader = ","
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim' 
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'Townk/vim-autoclose'
-Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'powerline/powerline', { 'rtp': '~/.vim/powerline/powerline/bindings/vim/' }
 Plugin 'The-NERD-Commenter'
 Plugin 'The-NERD-Tree'
 Plugin 'fatih/vim-go'
 "Plugin 'Valloric/YouCompleteMe'
-Plugin 'rust-lang/rust.vim'
+"Plugin 'rust-lang/rust.vim'
 "Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
+"Plugin 'plasticboy/vim-markdown'
 "Plugin 'tpope/vim-dispatch'
 "Plugin 'kien/ctrlp.vim'
 call vundle#end()
