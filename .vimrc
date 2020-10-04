@@ -9,7 +9,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim' 
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'Townk/vim-autoclose'
-Plugin 'powerline/powerline', { 'rtp': '~/.vim/powerline/powerline/bindings/vim/' }
+Plugin 'powerline/powerline' "{ 'rtp': '~/.vim/powerline/powerline/bindings/vim/' }
 Plugin 'The-NERD-Commenter'
 Plugin 'The-NERD-Tree'
 Plugin 'fatih/vim-go'
