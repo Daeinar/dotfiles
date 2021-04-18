@@ -16,7 +16,7 @@
 [push]
     default = simple
 [commit]
-    gpgsign=yes
+    gpgsign = yes
 [gpg]
     program = gpg
 [filter "lfs"]
@@ -24,3 +24,5 @@
     smudge = git-lfs smudge -- %f
     process = git-lfs filter-process
     required = true
+[pull]
+	rebase = false

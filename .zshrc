@@ -59,6 +59,9 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # autojump
 [[ -f `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 
+# sekey (https://github.com/sekey/sekey)
+export SSH_AUTH_SOCK=$HOME/.sekey/ssh-agent.ssh
+
 # Load all other ZSH config files
 configs=(aliases.zsh appearance.zsh \
          colors.zsh completion.zsh \

@@ -5,6 +5,7 @@ alias tmux='tmux -u'
 alias brewer='brew update && brew upgrade && brew cleanup && brew doctor'
 alias getip='curl -s http://icanhazip.com'
 alias grep='grep --color=auto'
+alias openssl-homebrew="/usr/local/opt/openssl@1.1/bin/openssl"
 
 # if [ -e "$HOME/.aliases-ssh" ]
 # then
