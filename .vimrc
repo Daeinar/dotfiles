@@ -12,7 +12,7 @@ Plugin 'Townk/vim-autoclose'
 Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'The-NERD-Commenter'
 Plugin 'The-NERD-Tree'
-Plugin 'fatih/vim-go'
+"Plugin 'fatih/vim-go'
 "Plugin 'Valloric/YouCompleteMe'
 "Plugin 'rust-lang/rust.vim'
 "Plugin 'godlygeek/tabular'
