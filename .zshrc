@@ -19,7 +19,7 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 # export PATH=/usr/local/opt/llvm/bin:$PATH
 
 # Golang
-export GOPATH=$HOME/Sync/code/go
+export GOPATH=$HOME/Sync/1-projects/go
 export PATH=$PATH:$GOPATH/bin
 
 # Rustup

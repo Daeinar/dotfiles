@@ -11,3 +11,11 @@ alias openssl3="/usr/local/opt/openssl@3/bin/openssl"
 if type hub > /dev/null; then
     eval "$(hub alias -s)"
 fi
+
+# See https://github.com/dutchcoders/transfer.sh/blob/main/examples.md
+transfer() {
+    curl --progress-bar --upload-file "$1" https://transfer.sh/$(basename "$1") | tee /dev/null;
+    echo
+}
+
+alias transfer=transfer
