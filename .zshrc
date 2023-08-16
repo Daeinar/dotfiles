@@ -2,7 +2,7 @@
 export LANG=en_US.UTF-8
 export LC_ALL=$LANG
 export LC_CTYPE=$LANG
-export ZSH=~/.zsh
+export ZSH=$HOME/.zsh
 export GPG_TTY=$(tty)
 
 # Load platform-specific settings (set PATHs etc.)
@@ -59,8 +59,13 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # autojump
 [[ -f `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 
-# sekey (https://github.com/sekey/sekey)
+# SSH: sekey (https://github.com/sekey/sekey)
 export SSH_AUTH_SOCK=$HOME/.sekey/ssh-agent.ssh
+
+# SSH: build config file
+INS=$HOME/.config/ssh
+OUT=$HOME/.ssh/config
+find $INS -not -path $INS'*/.*' -type f -name "config" | xargs cat > $OUT
 
 # Load all other ZSH config files
 configs=(aliases.zsh appearance.zsh \
@@ -75,3 +80,4 @@ done
 
 autoload -U compinit
 compinit -i
+
