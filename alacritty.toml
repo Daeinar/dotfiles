@@ -1,0 +1,153 @@
+# alacritty.toml -- symlinked to ~/.config/alacritty/alacritty.toml
+
+[general]
+live_config_reload = true
+ipc_socket = true
+
+# Catppuccin Mocha, the upstream port from github.com/catppuccin/alacritty,
+# vendored in this repo. Imports are merged before this file, so any color set
+# below would override the theme.
+import = ["~/.config/alacritty/catppuccin-mocha.toml"]
+
+#------------------------------------------------
+# window
+#------------------------------------------------
+[window]
+# y applies to top and bottom alike; alacritty has no per-side padding.
+padding = { x = 8, y = 14 }
+dynamic_padding = true
+
+# "Full" = title bar + border. macOS also has "Buttonless" (title bar, no
+# traffic lights) and "Transparent"; "None" drops the bar entirely, but then
+# the window can only be moved by the window manager.
+decorations = "Full"
+decorations_theme_variant = "Dark"
+
+# opacity below 1.0 needs a compositor; blur is macOS/KDE only.
+opacity = 1.0
+blur = false
+
+startup_mode = "Windowed"
+dynamic_title = true
+
+# Resize in whole-cell steps, so no dead strip is left at the window edge.
+resize_increments = true
+
+# Left Option sends Alt/Meta, which is what readline M-b / M-f / M-d and the
+# tmux Alt bindings need. Right Option keeps its macOS meaning, which the
+# British layout requires for Option+3 = #. Use "Both" only on a layout that
+# never needs Option to type a character.
+option_as_alt = "OnlyLeft"
+
+#------------------------------------------------
+# scrollback
+#------------------------------------------------
+[scrolling]
+history = 50000
+multiplier = 3
+
+#------------------------------------------------
+# font
+#------------------------------------------------
+[font]
+size = 13.0
+# The "Mono" cut keeps every icon a single cell wide. Plain "Hack Nerd Font"
+# draws them double width, which shifts the grid wherever one appears.
+normal = { family = "Hack Nerd Font Mono", style = "Regular" }
+bold = { family = "Hack Nerd Font Mono", style = "Bold" }
+italic = { family = "Hack Nerd Font Mono", style = "Italic" }
+bold_italic = { family = "Hack Nerd Font Mono", style = "Bold Italic" }
+
+# Alacritty draws U+2500-259F, the legacy computing symbols and the powerline
+# separators itself, so box drawing joins up regardless of the font.
+builtin_box_drawing = true
+
+# offset.y is line spacing, offset.x letter spacing.
+offset = { x = 0, y = 0 }
+
+#------------------------------------------------
+# cursor
+#------------------------------------------------
+[cursor]
+style = { shape = "Block", blinking = "Off" }
+vi_mode_style = { shape = "Block", blinking = "Off" }
+unfocused_hollow = true
+thickness = 0.15
+
+#------------------------------------------------
+# selection
+#------------------------------------------------
+[selection]
+# Word boundaries for double-click and the vi-mode semantic motions. Slash and
+# dot are absent, so a double-click takes a whole path or version string.
+semantic_escape_chars = ",|`:\"' ()[]{}<>\t"
+save_to_clipboard = false
+
+#------------------------------------------------
+# mouse
+#------------------------------------------------
+[mouse]
+hide_when_typing = true
+
+#------------------------------------------------
+# bell
+#------------------------------------------------
+[bell]
+# 0 disables the visual flash; raise to e.g. 100 to get the animation below.
+duration = 0
+animation = "EaseOutExpo"
+color = "#89b4fa"
+
+#------------------------------------------------
+# terminal
+#------------------------------------------------
+[terminal]
+# OSC 52: remote programs may write the clipboard but not read it. Read access
+# is what turns a hostile log line or pager into clipboard exfiltration.
+osc52 = "OnlyCopy"
+
+#------------------------------------------------
+# hints -- keyboard-driven grabbing of text off the screen
+#------------------------------------------------
+# Ctrl+Shift+O labels every URL and OSC 8 hyperlink; typing a label opens it.
+[[hints.enabled]]
+command = "open"
+hyperlinks = true
+post_processing = true
+persist = false
+mouse = { enabled = true, mods = "Command" }
+binding = { key = "O", mods = "Control|Shift" }
+regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^`\\\\]+"
+
+# Ctrl+Shift+Y copies a path or a hex string (git hash, digest) to the clipboard.
+[[hints.enabled]]
+action = "Copy"
+post_processing = true
+persist = false
+binding = { key = "Y", mods = "Control|Shift" }
+regex = "(~|\\.{1,2})?(/[\\w.@%+-]+)+/?|\\b[0-9a-f]{7,64}\\b"
+
+#------------------------------------------------
+# keyboard
+#------------------------------------------------
+# Additions only. The defaults already give Cmd+N / Cmd+T (window / tab),
+# Cmd+F / Cmd+B (search forward / backward), Cmd+K (clear scrollback),
+# Cmd+= / Cmd+- / Cmd+0 (font size), Ctrl+Shift+Space (vi mode).
+# Full list: man 5 alacritty-bindings
+[keyboard]
+bindings = [
+  # macOS line-editing muscle memory, emitted as readline control codes.
+  { key = "Left",      mods = "Command",  chars = "\u0001" },          # C-a
+  { key = "Right",     mods = "Command",  chars = "\u0005" },          # C-e
+  { key = "Backspace", mods = "Command",  chars = "\u0015" },          # C-u
+  { key = "Left",      mods = "Alt",      chars = "\u001Bb" },         # M-b
+  { key = "Right",     mods = "Alt",      chars = "\u001Bf" },         # M-f
+  { key = "Backspace", mods = "Alt",      chars = "\u001B\u007F" },    # M-DEL
+
+  # Fullscreen without being moved to a separate macOS Space.
+  { key = "Enter", mods = "Command", action = "ToggleSimpleFullscreen" },
+
+  # Scroll the buffer from the keyboard.
+  { key = "K", mods = "Command|Shift", action = "ScrollHalfPageUp" },
+  { key = "J", mods = "Command|Shift", action = "ScrollHalfPageDown" },
+]
